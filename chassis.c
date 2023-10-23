@@ -1,7 +1,5 @@
 #include <assert.h> /* assert */
-#include <err.h>
 #include <errno.h> /* errno */
-#include <error.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> /* strerror */
@@ -83,6 +81,8 @@ chassisContinue(ChassisHandle handle)
     return 1;
 
 }
+
+
 #endif
 #ifdef CHASSIS_SDL2
 
@@ -146,4 +146,14 @@ chassisContinue(ChassisHandle handle)
     return 1;
 }
 
+
 #endif
+
+//Structs have same field name for window
+//Will work if that stays true
+void*
+chassisGetWindow(ChassisHandle handle)
+{
+    return handle->window;
+}
+
