@@ -1,3 +1,5 @@
+module tests.d.test;
+
 //dmd test.d chassis.di -L-lchassis -L-l<glfw|SDL2>
 import std.stdio;
 import chassis;

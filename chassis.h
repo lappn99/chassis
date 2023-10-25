@@ -4,7 +4,8 @@
 
 struct Chassis;
 typedef struct Chassis* ChassisHandle;
-typedef void* (*funcMemoryAlloc)(size_t);
+typedef void* (*MemoryAlloc_func)(size_t);
+typedef void (*Render_func)(void);
 
 typedef struct
 {
@@ -15,7 +16,7 @@ typedef struct
 
 
 //Create chassis handle allocating with user supplied allocation callback
-ChassisHandle chassisCreate(funcMemoryAlloc);
+ChassisHandle chassisCreate(MemoryAlloc_func);
 //Returns
 // 1: If success
 // 0: If failed
@@ -31,6 +32,8 @@ int chassisInitWindow(ChassisHandle, InitWindowDesc);
 // 0: Chassis has stopped
 int chassisContinue(ChassisHandle);
 void* chassisGetWindow(ChassisHandle);
+void chassisSetRenderFunc(ChassisHandle, Render_func);
+
 
 
 #endif

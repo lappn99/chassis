@@ -1,1 +1,3 @@
 WINDOWING_BACKEND=GLFW
+LIB_PREFIX=/usr/local/
+INCLUDE_PREFIX=/usr/include/

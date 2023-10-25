@@ -25,19 +25,6 @@ struct Chassis
     GLFWwindow* window;
 };
  
-
-ChassisHandle 
-chassisCreate(funcMemoryAlloc memAlloc)
-{
-    ChassisHandle handle = memAlloc(sizeof(struct Chassis));
-    if(handle == NULL)
-    {
-        fprintf(stderr,"Error allocation memory for ChassisHandle: %s",strerror(errno));
-        return NULL;
-    }
-    return handle;
-}
-
 int 
 chassisInit(ChassisHandle handle)
 {
@@ -83,6 +70,7 @@ chassisContinue(ChassisHandle handle)
 }
 
 
+
 #endif
 #ifdef CHASSIS_SDL2
 
@@ -93,18 +81,6 @@ struct Chassis
 
 };
 
-ChassisHandle 
-chassisCreate(funcMemoryAlloc memAlloc)
-{
-    ChassisHandle handle = memAlloc(sizeof(struct Chassis));
-    if(handle == NULL)
-    {
-        fprintf(stderr,"Error allocation memory for ChassisHandle: %s",strerror(errno));
-
-        return NULL;
-    }
-    return handle;
-}
 int 
 chassisInit(ChassisHandle handle)
 {
@@ -148,6 +124,20 @@ chassisContinue(ChassisHandle handle)
 
 
 #endif
+
+
+ChassisHandle 
+chassisCreate(MemoryAlloc_func memAlloc)
+{
+    ChassisHandle handle = memAlloc(sizeof(struct Chassis));
+    if(handle == NULL)
+    {
+        fprintf(stderr,"Error allocation memory for ChassisHandle: %s",strerror(errno));
+
+        return NULL;
+    }
+    return handle;
+}
 
 //Structs have same field name for window
 //Will work if that stays true
