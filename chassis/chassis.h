@@ -2,6 +2,7 @@
 #define CHASSIS_H
 
 
+
 struct Chassis;
 typedef struct Chassis* ChassisHandle;
 typedef void* (*MemoryAlloc_func)(size_t);
@@ -34,6 +35,11 @@ int chassisContinue(ChassisHandle);
 void* chassisGetWindow(ChassisHandle);
 void chassisSetRenderFunc(ChassisHandle, Render_func);
 
+#ifndef CHASSIS_CONFIG_H
+#include "default_config.h"
+#endif
+
+#include "./impl/platform.h"
 
 
 #endif

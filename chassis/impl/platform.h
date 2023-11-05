@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> /* strerror */
-#include "chassis.h"
-#include "config.h"
 
 #ifdef CHASSIS_GLFW 
 #include <GLFW/glfw3.h> 
@@ -14,8 +12,6 @@
 #endif
 
 #define __NOT_IMPL assert(0)
-
-
 
 //GLFW Implementation
 #ifdef CHASSIS_GLFW
@@ -146,4 +142,3 @@ chassisGetWindow(ChassisHandle handle)
 {
     return handle->window;
 }
-

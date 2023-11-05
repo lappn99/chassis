@@ -1,0 +1,20 @@
+{
+	"authors": [
+		"Nathan Lapp"
+	],
+	"copyright": "Copyright © 2023, Nathan Lapp",
+	"description": "A minimal D application.",
+	"license": "proprietary",
+	"name": "chassis_d",
+	"targetType": "sourceLibrary",
+	"sourceFiles": ["./source/chassis_import.c"],
+	"buildTypes": {
+		"unittest": {
+			"buildOptions": 	["unittests", "debugMode", "debugInfo"],
+			"lflags": ["-lglfw"],
+			""
+			
+		}
+		
+	}
+}
