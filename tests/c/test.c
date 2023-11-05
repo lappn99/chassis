@@ -1,7 +1,8 @@
-//gcc -o test test.c -lchassis -l<glfw|SDL2>
+//gcc -o test test.c -l<glfw|SDL2>
 
 #include <stdio.h>
 #include <stdlib.h>
+#define CHASSIS_IMPL
 #include <chassis/chassis.h>
 
 

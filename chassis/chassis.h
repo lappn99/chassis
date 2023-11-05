@@ -39,7 +39,8 @@ void chassisSetRenderFunc(ChassisHandle, Render_func);
 #include "default_config.h"
 #endif
 
+#ifdef CHASSIS_IMPL 
 #include "./impl/platform.h"
-
+#endif
 
 #endif

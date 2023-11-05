@@ -11,5 +11,5 @@ install: ./chassis/chassis.h
 uninstall:
 	rm -rf ${DESTDIR}${INCLUDE_PREFIX}chassis
 
-test:
+test: ./tests/c/test.c
 	gcc -o test ./tests/c/test.c -lglfw
